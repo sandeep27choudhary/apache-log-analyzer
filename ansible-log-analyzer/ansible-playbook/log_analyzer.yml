@@ -1,1 +1,14 @@
 # Initial ansible playbook 
+
+- hosts: localhost
+  tasks:
+  - name: Add executable permission
+    command: chmod +x ./log_analyzer.sh
+
+  - name: Run log analyzer script
+    shell: "./log_analyzer.sh ./.log/access_logs.log"
+    register: log_analysis
+
+  - debug:
+      var: log_analysis.stdout_lines
+
