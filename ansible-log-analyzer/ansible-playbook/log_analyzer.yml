@@ -6,7 +6,7 @@
     command: chmod +x ./log_analyzer.sh
 
   - name: Run log analyzer script
-    shell: "./log_analyzer.sh ./.log/access_logs.log"
+    shell: "./log_analyzer.sh ./../.log/access_logs.log"
     register: log_analysis
 
   - debug:
